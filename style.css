@@ -25,7 +25,7 @@ h1 {
 .body {
 	background-image: url('body_img.png');
 	background-size: 100%;
-	min-height: 89%;
+	min-height: 90%;
 	width: 100%;
 	position: absolute;
 }
