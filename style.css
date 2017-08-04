@@ -1,0 +1,52 @@
+*{
+
+}
+h1 {
+	color: white;
+}
+.contaier-fluid {
+	background-color: #F5BC1B;
+}
+.header {
+	padding: 10px;
+	padding: 10px 10px;
+}
+.logo {
+	margin-left: 10%;
+}
+.header_contact {
+	margin-top: -10px;
+	color: white;
+	margin-right: 2%;
+}
+
+/*   body css  */
+
+.body {
+	background-image: url('body_img.png');
+	background-size: 100%;
+	min-height: 89%;
+	width: 100%;
+	position: absolute;
+}
+.body_main {
+	position: absolute;
+	min-height: 80%;
+	width: 80%;
+	margin: 0 auto;
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 10px;
+	margin-left: 10%;
+	margin-top: 5%;
+}
+.cal_savings a{
+	text-decoration: none;
+	color: white;
+	padding: 15px;
+	background-color: #F5BC1B;
+ 	border-radius: 10px;
+	white-space: nowrap;
+	width: 100%;
+	font-family: "BebasNeueRegular";
+	padding: px;
+}
