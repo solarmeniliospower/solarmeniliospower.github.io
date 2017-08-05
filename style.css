@@ -25,9 +25,9 @@ h1 {
 .body {
 	background-image: url('body_img.png');
 	background-size: 100%;
-	min-height: 90%;
+	height: 100vh;
 	width: 100%;
-	position: absolute;
+	 
 }
 .body_main {
 	position: absolute;
@@ -37,16 +37,68 @@ h1 {
 	background-color: rgba(255,255,255,0.9);
 	border-radius: 10px;
 	margin-left: 10%;
-	margin-top: 5%;
+	margin-top: 3%;
 }
-.cal_savings a{
+ 
+.body_main_text {
+	position: relative;
+	min-height: 60vh;
+	width: 100%;
+}
+
+.cal_savings {
+
 	text-decoration: none;
 	color: white;
 	padding: 15px;
 	background-color: #F5BC1B;
  	border-radius: 10px;
-	white-space: nowrap;
-	width: 100%;
+	word-wrap: break-word;
+	width: 50%;
+	margin: 0 auto;
 	font-family: "BebasNeueRegular";
-	padding: px;
+}
+ 
+
+@media screen and (max-width: 840px) {
+	 .cal_savings {
+	 	width: 80%;
+	 	font-size: 120%;
+	 }
+}
+
+.cal_start {
+	height: 20%;
+	width: 100%;
+	background-image: url("solar.png");
+	background-size: 100% 200px;
+	height: 200px;
+}
+
+.cal_start h1 {
+	padding-bottom: 0px;
+	color: white;
+	padding-top: 50px;
+
+}
+.cal_start h3 {
+	color: white;
+	margin-top: -10px;
+}
+
+/*    step 1    */
+
+.step1 {
+	background-color: #F6E6BA;
+}
+.step1 h2 {
+	color: black;
+}
+
+.calculate_but {
+	background-color: orange;
+ 	box-shadow: 0px 0px 5px grey;
+	color: black;
+	width: 200px;
+	padding: 7px 29px;
 }
