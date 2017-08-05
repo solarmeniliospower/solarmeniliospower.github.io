@@ -29,11 +29,11 @@
 
 	<!--  body   -->
 
-	<div class="body" style="background-image: url(body_img.png);">
+	<div class="body" style="background-image: url(body_img.png);overflow: auto;">
 
 		<div class="body_main">
 			
-		 	<div class="row" style="position: absolute;min-height: ">
+		 	<div class="row body_main_text">
 
 		 		<div class="col-md-4">
 		 			
@@ -55,17 +55,12 @@
 
 		 	</div>
 
-		 	<div class=" container row" style="position: absolute;bottom: 50px;">
+		 	<div class="row yoo">
 
-		 		<div class="col-md-4"></div>
 
-		 		<div class="col-md-4 text-center">
-		 			
-		 			<h3 style="font-family: "BebasNeueRegular" class="cal_savings"><a href="#">CALCULATE</a></h3>
+		 	<a href="#"><h3 style="font-family: 'BebasNeueRegular';" class="cal_savings text-center">CALCULATE YOUR SAVINGS</h3></a>
 
-		 		</div>
-
-		 		<div class="col-md-3"></div>
+		 	</div>
 		 			
 
 		 	</div>
@@ -73,6 +68,113 @@
 		</div>
 
 	</div>
+
+	<!--   cal starting  -->
+  	<div class="cal_start container text-center">
+  		<div class="cal_start_content">
+
+	  		 <h1>SOLARMEN CALCULATOR</h1>
+	  		 <h3>Calculate your savings instantly</h3>
+
+  		</div>
+
+  	</div>
+
+  	<!--   step 1    -->
+
+  	<div class="step1 container text-center" style="width: 100%">
+
+  		<h4>STEP 01</h4>
+  		<img src="view.png" class="img" width="70px">
+  		<h2><u>Visualize Your Savings</u></h2><br>
+
+  		<div class="row">
+
+  			<div class="col-md-4">
+  				
+  				<h4>State</h4>
+  				<div class="form-group center-block" style="width: 60%;" id="calcmain">
+
+				<select name="SelectState" id="inputSelectState" class="form-control" required="required" value="Andhra Pradesh">
+	                  <option value="Chandigarh">Chandigarh</option>
+	                  <option value="Delhi">Delhi</option>
+	                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+	                  <option value="Haryana">Haryana</option>
+	                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+	                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+	                  <option value="Punjab">Punjab</option>
+	                  <option value="Uttarakhand">Uttarakhand</option>
+	                  <option value="Bihar">Bihar</option>
+	                  <option value="Jharkhand">Jharkhand</option>
+	                  <option value="West Bengal">West Bengal</option>
+	                  <option value="Sikkim">Sikkim</option>
+	                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+	                  <option value="Assam">Assam</option>
+	                  <option value="Nagaland">Nagaland</option>
+	                  <option value="Manipur">Manipur</option>
+	                  <option value="Mizoram">Mizoram</option>
+	                  <option value="Tripura">Tripura</option>
+	                  <option value="Meghalaya">Meghalaya</option>
+	                  <option value="Odisha">Odisha</option>
+	                  <option value="Chhattisgarh">Chhattisgarh</option>
+	                  <option value="Andhra Pradesh" selected="selected">Andhra Pradesh</option>
+	                  <option value="Karnataka">Karnataka</option>
+	                  <option value="Puducherry">Puducherry</option>
+	                  <option value="Tamilnadu">Tamilnadu</option>
+	                  <option value="Kerala">Kerala</option>
+	                  <option value="Goa">Goa</option>
+	                  <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+	                  <option value="Daman and Diu">Daman and Diu</option>
+	                  <option value="Maharashtra">Maharashtra</option>
+	                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+	                  <option value="Gujarat">Gujarat</option>
+	                  <option value="Rajasthan">Rajasthan</option>
+	                  <option value="Lakshadeep">Lakshadeep</option>
+	                  <option value="Andman and Nicobar Islands">Andman and Nicobar Islands</option>
+	                  <option value="Telangana">Telangana</option>
+	                  <option value="Puducherry">Puducherry</option>
+				</select>
+
+			</div>
+
+
+  			</div>
+
+  			<div class="col-md-4">
+  				
+  				<h4> Type of Connection</h4>
+
+  				<div class="form-group center-block" style="width: 60%;">
+
+				<select name="Category" id="inputCategory" class="form-control" required="required">
+						<option value="Commercial">Commercial</option>
+						<option value="Residential">Residential</option>
+						<option value="Industrial">Industrial</option>
+				</select>
+
+			</div>
+
+  			</div>
+
+  			<div class="col-md-4">
+  				
+  				<h4>Approximate Bill Amount</h4>
+
+  				<div class="form-group center-block" style="width: 60%;">
+  				 
+  				<input type="number" name="billamount" id="inputBillamount" class="form-control" value="10000" min="{1000}" max="" step="100" required="required" title="" placeholder="Enter Bill Amount">
+
+			</div>
+
+  			</div><br>
+
+  			
+
+  		</div><br>
+
+  			<h3 class="calculate_div text-center"><a href="#" class="calculate_but">CALCULATE</a></h3><br><br>
+
+  	</div><br><br><br>
 
 </body>
 </html>
