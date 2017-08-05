@@ -58,7 +58,7 @@
 		 	<div class="row yoo">
 
 
-		 	<a href="#"><h3 style="font-family: 'BebasNeueRegular';" class="cal_savings text-center">CALCULATE YOUR SAVINGS</h3></a>
+		 	<a href="#main" class="cal_your_savings"><h3 style="font-family: 'BebasNeueRegular';" class="cal_savings text-center">CALCULATE YOUR SAVINGS</h3></a>
 
 		 	</div>
 		 			
@@ -70,6 +70,9 @@
 	</div>
 
 	<!--   cal starting  -->
+
+	<div class="main_body" id="main" style="display: none;">
+
   	<div class="cal_start container text-center">
   		<div class="cal_start_content">
 
@@ -174,7 +177,59 @@
 
   			<h3 class="calculate_div text-center"><a href="#" class="calculate_but">CALCULATE</a></h3><br><br>
 
-  	</div><br><br><br>
+  	</div> 
+
+  	</div>
+
+  	<script type="text/javascript">
+  		
+  	$('.cal_your_savings').click( function() {
+  		$('.main_body').show();
+  	})
+
+  	</script>
+
+
+  	<script type="text/javascript">
+  		
+  		 $('a[href*="#"]')
+		  // Remove links that don't actually link to anything
+		  .not('[href="#"]')
+		  .not('[href="#0"]')
+		  .click(function(event) {
+		    // On-page links
+		    if (
+		      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+		      && 
+		      location.hostname == this.hostname
+		    ) {
+		      // Figure out element to scroll to
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		      // Does a scroll target exist?
+		      if (target.length) {
+		        // Only prevent default if animation is actually gonna happen
+		        event.preventDefault();
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000, function() {
+		          // Callback after animation
+		          // Must change focus!
+		          var $target = $(target);
+		          $target.focus();
+		          if ($target.is(":focus")) { // Checking if the target was focused
+		            return false;
+		          } else {
+		            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+		            $target.focus(); // Set focus again
+		          };
+		        });
+		      }
+		    }
+		  });
+
+
+  	</script>
 
 </body>
 </html>
