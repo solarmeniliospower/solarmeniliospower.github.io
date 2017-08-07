@@ -85,7 +85,7 @@
 
   	<!--   step 1    -->
 
-  	<div class="step1 container text-center" style="width: 100%">
+  	<div class="step1 container text-center" style="width: 100%"><br>
 
   		<h4>STEP 01</h4>
   		<img src="view.png" class="img" width="70px">
@@ -173,24 +173,297 @@
 
   			
 
-  		</div><br>
+  		</div><br><br>
 
-  			<h3 class="calculate_div text-center"><a href="#" class="calculate_but">CALCULATE</a></h3><br><br>
+  			<h3 class="calculate_div text-center" onclick="calculate();"><a href="#rem_steps" class="calculate_but" onclick="calculate();">CALCULATE</a></h3><br><br><br><br><br>
 
   	</div> 
 
+  	<div class="container" style="background-color: white;font-family: -apple-system, BlinkMacSystemFont, sans-serif;padding: 5%;border-radius: 10px;" id="roi1">
+		
+		<div class="row col-md-offset-1"> 
+
+			<div class="col-md-5">
+
+				<div class="media">
+
+		            <div class="media-left" style="border: 3px solid orange;border-radius: 50%;">
+		        		<img src="plantsize.png"   class="pull-left visuaimages"   align="center" style="">
+		        	</div> 
+
+		        	<div class="media-body">
+		        		<h4 class="media-heading visuaheadingval" style="margin-top: 70px;">
+		        		   <span id="plantcapacityval"><b> </b></span>
+		        		</h4>		        		 
+		        	</div>
+		        	<h3 style="color: orange;margin-left: 25px;">Plant Size</h3>
+
+		        </div>
+
+			</div>
+
+			<div class="col-md-2"></div>
+			 
+
+			<div class="col-md-5">
+
+				<div class="media">
+
+		            <div class="media-right" style="border: 2px solid orange;border-radius: 50%;">
+		        		<img src="savings.png"   class="pull-left visuaimages" style="width: 170px">
+		        	</div> 
+
+		        	<div class="media-body">
+		        		<h4 class="media-heading visuaheadingval"  style="margin-top: 70px;">
+		        		 <span class="text-center" id="chan1"><b><span id="minMonthlySavings"></span> </b></span>
+		        		</h4>		        		 
+		        	</div>
+		        	<h3 style="color: orange;margin-left: 20px;">Monthly Savings</h3>
+
+		        </div>
+
+
+			</div>
+			
+
+        </div>
+
+        <div class="row"><div class="col-ms-12">l</div></div>
+
+        <div class="row col-md-offset-1">
+
+			<div class="col-md-5">
+
+				<div class="media">
+
+		            <div class="media-left" style="border: 3px solid orange;border-radius: 50%;">
+		        		<img src="emi.png"   class="pull-left visuaimages"   align="center" style="width: 140px;padding: 25px">
+		        	</div> 
+
+		        	<div class="media-body">
+		        		<h4 class="media-heading visuaheadingval" style="margin-top: 80px;">
+		        		   <span id="emival"><b> </b></span>
+		        		</h4>		        		 
+		        	</div>
+		        	<h3 style="color: orange;margin-left: 50px;">EMI</h3>
+
+		        </div>
+
+			</div>
+
+			<div class="col-md-2">
+
+
+
+			</div>
+
+			<div class="col-md-5">
+
+				<div class="media">
+
+		            <div class="media-right" style="border: 2px solid orange;border-radius: 50%;">
+		        		<img src="breakeven.png"   class="pull-left visuaimages">
+		        	</div> 
+
+		        	<div class="media-body">
+		        		<h4 class="media-heading visuaheadingval" style="margin-top: 70px;">
+		        		   <span><b>5 Years</b></span>
+		        		</h4>		        		 
+		        	</div>
+		        	<h3 style="color: orange;margin-left: 25px;">Break Even</h3>
+
+		        </div>
+
+			</div>
+			
+
+        </div>
+
+         
+
+	</div><br><br>
+
+  	
+
+  	<div class="" style="dsplay: none;width: 100%" id="rem_steps">
+
+  		<a href="" style="color: black">
+
+	  		<div class="col-md-6 text-center" style="background-color: #FFDA71;"><br>
+
+	  			<h4>STEP 02</h4>
+	  			<img src="generate.png" width="50px">
+	  			<h2>Generate my Solar proposal</h2><br><br>
+
+	  		</div>
+
+  		</a>
+
+  		<a href="#" style="color: black;">
+
+	  		<div class="col-md-6 text-center" style="background-color: #F5BC1B;"><br>
+
+	  			<h4>STEP 03</h4>
+	  			<img src="go.png" width="50px">
+	  			<h2>Go Solar</h2><br><br>
+
+	  		</div>
+
+  		</a>
+
   	</div>
 
+  	<!--   contact section   -->
+
+  	<div class="contact">
+
+  		<div class="">
+
+  			<div class="col-md-6" style="argin-left: 10%;">
+
+  				<h3>CONTACT US</h3>
+  				<h5>Service of Sun<br> we'll make you believer.</h5>
+  				<input type="email" name="email" placeholder="EMAIL" style="border: none;border-bottom: 1px solid black"><br><br>
+  				<input type="password" name="password" placeholder="PASSWORD" style="border:none;border-bottom: 1px solid black;"><br><br>
+  				<input type="submit" name="SUBMIT" style="background-color: black;color: white;border: none;border-radius: 4px;margin-left: 25px;padding: 3px 13px">
+
+  			</div>
+
+  			<div class="col-md-6 text-center">
+
+  			<h3>Why go with SOLARMEN?</h3>
+
+  			</div>
+
+  		</div>
+
+  	</div>
+
+  	</div>
+
+  	<script type="text/javascript" src="calc.js"></script>
+
   	<script type="text/javascript">
-  		
-  	$('.cal_your_savings').click( function() {
-  		$('.main_body').show();
-  	})
 
-  	</script>
+  		$('.cal_your_savings').click( function() {
+  			$('.main_body').show();
+  		});
+
+		var capitalCost = 0;
+		var pmt = 0;
+		var minMonthlySavings = 0;
+		var lifetimesavings = 0;
+		var emi = 0;
+		var equity = 0;
+		var npv = 0;
+
+		function recalculate() {
+			$('#calcmain').toggle();
+			$('#calcresults').toggle();
+        }
+        function planInvestment() {
+        	$('#calcresults').toggle();
+        	$('#calinvestment').toggle();
+        	$('#inputPlantcapacityval1').val(Math.round(result["maxplantcapacity"].toFixed(2)));
+        	$('#inputcost1').val(Math.round(result.cost.toFixed(2)));
+        	$('#inputdebt').val(100 - $('inputequity').val());
+        	$('#equityVal').html(" &#8377; "+(result.cost.toFixed(2) * 0.3).toFixed(2) + " Lacs");
+        	$('#debtVal').html("&#8377; "+(result.cost.toFixed(2) * (1 - ($('inputequity').val()/100))).toFixed(2) + " Lacs");
+        	updateInvestModal();
+        }
+        function updateInvestModal(){
+        	$('#inputdebt').val(100 - $('#inputequity').val());
+        	equity = ($('#inputcost1').val() * ($('#inputequity').val()/100)).toFixed(2);
+        	$('#equityVal').html("&#8377; "+ equity + " Lacs");
+        	$('#debtVal').html("&#8377; "+($('#inputcost1').val() - equity).toFixed(2) + " Lacs");
+        }
+        function showReturns(argument) {
+        	$('#calinvestment').toggle();
+        	$('#calResults').toggle();
+        	
+			var interest = $('#inputinterestRate').val();
+        	var term = $('#inputloanTerm').val();
+        	var debt = $('#inputdebt').val();
+        	var cost = $('#inputcost1').val();
+        	var cap = $('#inputPlantcapacityval1').val();
+        	var pmt = PMT((interest * 0.01)/12, term * 12, (debt/100) * cost * 100000);
+        	emi = pmt; // -1 to make the number positive for display purposes
+        	
+        	$('#plantcapacityval2').html(Math.round(cap) + " kW");
+        	$('#cost2').html("&#8377; "+Math.round(cost) + " Lacs");
+        	
+        	$('#emiVal').html("&#8377; "+Math.round(pmt.toFixed(2)) * -1 +" per month");
+        	$('#minMonthlySavingsVal').html("&#8377; "+Math.round((getSavingsFromCap(result.billamount, cap, result.cusType, 1)).toFixed(2)) +" per month");
+        	$('#lifetimesavings').html("&#8377; "+Math.round(getLifeSavings(result.billamount, cap, result.cusType).toFixed(2)) +" Lacs");
+        	for (var i = 0; i < result.ftrCashFlowsArray.length; i++) {
+        		result.ftrCashFlowsArray[i] = result.ftrSavingsArray[i] + (emi * 12) - result.ftrOpExArray[i] - result.ftrReplacementCostArray[i];
+        	}
+        }
+        function updateCCost(){
+        	console.log("uc called");
+        	var cost = $('#inputcost1').val();
+        	var size = getSizeFromCost(cost).toFixed(2);
+        	$('#inputPlantcapacityval1').val(size);
+        	updateInvestModal();
+        }
+        function updatePCapacity(){
+        	console.log("upc called");
+        	var cap = $('#inputPlantcapacityval1').val();
+        	var cost = getPlantCostPerKW(cap) * cap;
+        	$('#inputcost1').val(cost.toFixed(2));
+        	updateInvestModal();
+        }
+        function restart(){
+        	$('#calResults').toggle();
+        	$('#calcmain').toggle();
+        }
+
+        function calculate() {
+			//$('#calcmain').toggle();
+			//$('#calcresults').toggle();
+			var billamt = $('#inputBillamount').val();
+			var cat = $('#inputCategory').val();
+			var state = $('#inputSelectState').val();
+			var percentuse = $('#inputPercentUse').val();
+			var equityp = 30;
+			var debtp = 100 - equityp;
+			
+			result = solarCalc(billamt, cat, state);
+			capitalCost = result.cost;
+			minMonthlySavings = result.ftrSavingsArray[0]/12;
+			lifetimesavings = result.lifetimesavings / 100000;
+			console.log(result);
+			$('#plantcapacityval').html(Math.round(result["maxplantcapacity"]) + " kW");
+			$('#emival').html(Math.round(result["emi"]));
+			$('#minMonthlySavings').html("&#8377; " + Math.round(result["savings"]));
+			$('#plantareaval').html(Math.round(result["plantarea"].toFixed(2)) + " Sq.Ft.");
+			$('#cost').html("&#8377; "+ Math.round(result.cost.toFixed(2)) + " Lacs");
+			$('#billreduction').html("&#8377; " + Math.round(result.newbill.toFixed(2)));
+			$('#totalsavings').html("&#8377; "+Math.round((result["lifetimesavings"]/100000).toFixed(2))+" Lacs");
+			$('#powergenerated').html(Math.round(result.powergenerated.toFixed(2)) + " kWh");
+
+			if(result.maxplantcapacity < 1){
+				$('#capacityAlert').show();
+			}
+			else{
+				$('#capacityAlert').hide();
+			}
+
+			return result;
+		}
+
+		$(document).ready(function() {
+		    var opt = $("#inputSelectState option").sort(function (a,b) { return a.value.toUpperCase().localeCompare(b.value.toUpperCase()) });
+		    $("#inputSelectState").append(opt);
+		    $("#inputSelectState").val("Andhra Pradesh");
+		});
+
+		/*
+
+			for smooth scrolling
 
 
-  	<script type="text/javascript">
+		*/
   		
   		 $('a[href*="#"]')
 		  // Remove links that don't actually link to anything
