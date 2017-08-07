@@ -175,11 +175,13 @@
 
   		</div><br><br>
 
-  			<h3 class="calculate_div text-center" onclick="calculate();"><a href="#rem_steps" class="calculate_but" onclick="calculate();">CALCULATE</a></h3><br><br><br><br><br>
+  			 <a href="#rem_steps" class="calculate_but" onclick="calculate()">CALCULATE</a><br><br><br><br><br>
 
   	</div> 
 
-  	<div class="" style="dsplay: none;width: 100%" id="rem_steps">
+  	<div class="hide_cal" style="display: none;">
+
+  	<div class="remp_steps" style="width: 100%" id="rem_steps">
 
   	<div class="container" style="background-color: white;font-family: -apple-system, BlinkMacSystemFont, sans-serif;padding: 5%;border-radius: 10px;" id="roi1">
 		
@@ -283,7 +285,7 @@
 
          
 
-	</div><br><br>
+	</div><br>
 
 
   		<a href="" style="color: black">
@@ -309,6 +311,8 @@
 	  		</div>
 
   		</a>
+
+  	</div>
 
   	</div>
 
@@ -340,12 +344,18 @@
 
   	</div>
 
+
   	<script type="text/javascript" src="calc.js"></script>
 
   	<script type="text/javascript">
 
   		$('.cal_your_savings').click( function() {
   			$('.main_body').show();
+  		});
+
+  		$('.calculate_but').click( function() {
+  			$('.hide_cal').show();
+  			//alert("a")
   		});
 
 		var capitalCost = 0;
