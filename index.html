@@ -241,7 +241,7 @@
 				<div class="media">
 
 		            <div class="media-left" style="border: 3px solid orange;border-radius: 50%;">
-		        		<img src="emi.png"   class="pull-left visuaimages"   align="center" style="width: 140px;padding: 25px">
+		        		<img src="emi.png"   class="pull-left visuaimages"   align="center" style="width: 160px;height:160px;padding: 30px">
 		        	</div> 
 
 		        	<div class="media-body">
@@ -285,7 +285,144 @@
 
          
 
-	</div><br>
+	</div>
+
+
+	<div class="container">
+		
+		<div class="row">
+
+			
+			<div class="col-md-5">
+
+				<div class="row col-md-offset-2">
+
+					<div class="col-md-10">
+
+						<h1 style="color: white" class="text-center">Monthly Bill</h1>
+
+						<div style="background-color: white;">
+
+							<div class="media" style="padding: 10%;">
+
+				            <div class="media-right" >
+				        		<img src="current_bill.png" class="pull-left" width="100px">
+				        	</div> 
+
+				        	<div class="media-body">
+				        		<h4 class="media-heading visuaheadingval" style="margin-top: 70px">
+				        		   <span id="montlybillval"><b></b></span>
+				        		</h4>		        		 
+				        	</div>
+				        	<h3 style="color: black;margin-left: 5px;">Current Bill</h3>
+
+				        </div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="row col-md-offset-2">
+
+					<div class="col-md-10">
+
+						<div style="background-color: white;">
+
+							<div class="media" style="padding: 10%;">
+
+				            <div class="media-right" >
+				        		<img src="billwithsolar.png" class="pull-left" width="100px">
+				        	</div> 
+
+				        	<div class="media-body">
+				        		<h4 class="media-heading visuaheadingval" style="margin-top: 40px;">
+				        		   <span id="newbillval"><b> </b></span>
+				        		</h4>		        		 
+				        	</div>
+				        	<h3 style="color: black;margin-left: 5px;">Bill with Solar</h3>
+
+				        </div>
+
+						</div>
+
+					</div>
+					
+				</div>
+
+			</div>
+
+			<div class="col-md-2">
+
+
+			</div>
+
+			<div class="col-md-5">
+
+				<div class="row">
+
+					<div class="col-md-10">
+
+						<h1 style="color: white" class="text-center">Life Time Savings</h1>
+						<h3 id="montlybillval1" style="margin-top: 0px;"><b> </b></h3>
+						<h3 id="montlybillval2" style="margin-top: 0px;position: absolute;"><b> </b></h3>
+
+						<div style="background-color: white;margin-top: 75px; ">
+						<!--<canvas id="myChart2" width="100px" height="100px" ></canvas>-->
+						 
+						<img src="graph.png" class="img-responsive"  >
+
+						 
+
+						</div>
+
+					</div>
+
+				</div>
+
+				 
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+
+
+	<div class="container" style="background-color: white;color: orange;font-family: -apple-system, BlinkMacSystemFont, sans-serif;border-radius: 10px; " id="roi">
+
+		<div class="row">
+
+			<h2 class="text-center" style="color: orange"><u>Return on Investment</u></h2><br>
+
+			<div class="col-md-4">
+
+				<img src="icon2.png" class="img-responsive" width="170px" style="margin: 0 auto;">
+				<h3 class="text-center">Fixed Deposit<br>8%</h3><br><br>
+
+			</div>
+
+			<div class="col-md-4">
+
+				<img src="mutualfinds.png" class="img-responsive" width="150px" style="margin: 0 auto">
+				<h3 class="text-center">Mutual Funds<br> 14%</h3><br><br>
+
+			</div>
+
+			<div class="col-md-4">
+
+				<img src="power1.png" class="img-responsive" width="150px;" style="margin: 0 auto">
+				<h3 class="text-center">Solar <br> 17%</h3><br><Br>
+
+			</div>
+
+		</div>
+
+	</div>
+
 
 
   		<a href="" style="color: black">
@@ -444,6 +581,11 @@
 			console.log(result);
 			$('#plantcapacityval').html(Math.round(result["maxplantcapacity"]) + " kW");
 			$('#emival').html(Math.round(result["emi"]));
+			$('#montlybillval').html("&#8377; " + Math.round(result["billamount"]));
+			$('#newbillval').html("&#8377; " + Math.round(result.newbill.toFixed(2)));
+			$('#montlybillval1').html("&#8377; "+Math.round((result["lifetimesavings"]/100000).toFixed(2))+" Lacs");
+			//$('#newbillval').html("&#8377; " + Math.round(result.newbill.toFixed(2)));
+			$('#montlybillval2').html("&#8377; " + Math.round((result["rescolifesavings"]/100000).toFixed(2))+" Lacs");
 			$('#minMonthlySavings').html("&#8377; " + Math.round(result["savings"]));
 			$('#plantareaval').html(Math.round(result["plantarea"].toFixed(2)) + " Sq.Ft.");
 			$('#cost').html("&#8377; "+ Math.round(result.cost.toFixed(2)) + " Lacs");
