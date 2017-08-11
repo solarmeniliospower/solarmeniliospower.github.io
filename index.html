@@ -437,7 +437,7 @@
 
 			<div class="col-md-8">
 
-				<a href="#" class="go_to_step2"><h2 style="color: black;" onclick="planInvestment()" >I'm convinced and let me go through to the next steps</h2></a><br>
+				<a href="#go_to_step2" class="go_to_step2"><h2 style="color: black;" onclick="planInvestment()" >I'm convinced and let me go through to the next steps</h2></a><br>
 
 			</div>
 
@@ -460,8 +460,8 @@
 
 	</div>
 
-	<div id="nextsteplin">
-	<div class="container-fluid text-center" style="background-color:  #FFDA71;"><br>
+	<div class="cal_step2" style="display: none;">
+	<div class="container-fluid text-center" id="go_to_step2" style="background-color:  #FFDA71;"><br>
 
 		<h4>STEP 03</h4>
 		
@@ -598,7 +598,7 @@
 
 				<div class="col-md-3"></div>
 
-				<div class="col-md-6 text-center"><br><br>
+				<div class="col-md-6 text-center">
 						<h2> EMI</h2><br>
 						<h1 class="page2values" id="emiVal" style="min-height: 45px;">  </h1>	
 		 
@@ -646,13 +646,13 @@
 
 
 
-  		<a href="" style="color: black">
+  		<a href="#go_to_step2" style="color: black" class="go_to_step2" onclick="planInvestment()">
 
 	  		<div class="col-md-6 text-center" style="background-color: #FFDA71;"><br>
 
 	  			<h4>STEP 02</h4>
 	  			<img src="generate.png" width="50px">
-	  			<h2>Generate my Solar proposal</h2><br><br>
+	  			<h3>Generate my Solar proposal</h3><br><br>
 
 	  		</div>
 
@@ -664,7 +664,7 @@
 
 	  			<h4>STEP 03</h4>
 	  			<img src="go.png" width="50px">
-	  			<h2>Go Solar</h2><br><br>
+	  			<h3>Go Solar</h3><br><br>
 
 	  		</div>
 
@@ -711,10 +711,23 @@
   			$('.main_body').show();
   		});
 
+  		$('.go_to_step2').click( function() {
+  			$('.cal_step2').show();
+  		});
+
   		$('.calculate_but').click( function() {
   			$('.hide_cal').show();
   			//alert("a")
   		});
+
+
+  		var capitalCost = 0;
+		var pmt = 0;
+		var minMonthlySavings = 0;
+		var lifetimesavings = 0;
+		var emi = 0;
+		var equity = 0;
+		var npv = 0;
 
   		$( function() {
 
@@ -763,15 +776,7 @@
 		});
 
 
-		var capitalCost = 0;
-		var pmt = 0;
-		var minMonthlySavings = 0;
-		var lifetimesavings = 0;
-		var emi = 0;
-		var equity = 0;
-		var npv = 0;
-
-		function recalculate() {
+		/*function recalculate() {
 			$('#calcmain').toggle();
 			$('#calcresults').toggle();
         }
@@ -830,6 +835,59 @@
         function restart(){
         	$('#calResults').toggle();
         	$('#calcmain').toggle();
+        }*/
+
+        function planInvestment() {
+        	$('#calcresults').toggle();
+        	$('#calinvestment').toggle();
+        	$('#inputPlantcapacityval1').val(Math.round(result["maxplantcapacity"].toFixed(2)));
+        	$('#inputcost1').val(Math.round(result.cost.toFixed(2)));
+        	$('#inputdebt').val(100 - $('inputequity').val());
+        	$('#equityVal').html(" &#8377; "+(result.cost.toFixed(2) * 0.3).toFixed(2) + " Lacs");
+        	$('#debtVal').html("&#8377; "+(result.cost.toFixed(2) * (1 - ($('inputequity').val()/100))).toFixed(2) + " Lacs");
+        	updateInvestModal();
+        }
+        function updateInvestModal(){
+        	$('#inputdebt').val(100 - $('#inputequity').val());
+        	equity = ($('#inputcost1').val() * ($('#inputequity').val()/100)).toFixed(2);
+        	$('#equityVal').html("&#8377; "+ equity + " Lacs");
+        	$('#debtVal').html("&#8377; "+($('#inputcost1').val() - equity).toFixed(2) + " Lacs");
+        }
+        function showReturns(argument) {
+        	$('#calinvestment').toggle();
+        	$('#calResults').toggle();
+        	
+			var interest = $('#inputinterestRate').val();
+        	var term = $('#inputloanTerm').val();
+        	var debt = $('#inputdebt').val();
+        	var cost = $('#inputcost1').val();
+        	var cap = $('#inputPlantcapacityval1').val();
+        	var pmt = PMT((interest * 0.01)/12, term * 12, (debt/100) * cost * 100000);
+        	emi = pmt; // -1 to make the number positive for display purposes
+        	
+        	$('#plantcapacityval2').html(Math.round(cap) + " kW");
+        	$('#cost2').html("&#8377; "+Math.round(cost) + " Lacs");
+        	
+        	$('#emiVal').html("&#8377; "+Math.round(pmt.toFixed(2)) * -1 +" per month");
+        	$('#minMonthlySavingsVal').html("&#8377; "+Math.round((getSavingsFromCap(result.billamount, cap, result.cusType, 1)).toFixed(2)) +" per month");
+        	$('#lifetimesavings').html("&#8377; "+Math.round(getLifeSavings(result.billamount, cap, result.cusType).toFixed(2)) +" Lacs");
+        	for (var i = 0; i < result.ftrCashFlowsArray.length; i++) {
+        		result.ftrCashFlowsArray[i] = result.ftrSavingsArray[i] + (emi * 12) - result.ftrOpExArray[i] - result.ftrReplacementCostArray[i];
+        	}
+        }
+        function updateCCost(){
+        	console.log("uc called");
+        	var cost = $('#inputcost1').val();
+        	var size = getSizeFromCost(cost).toFixed(2);
+        	$('#inputPlantcapacityval1').val(size);
+        	updateInvestModal();
+        }
+        function updatePCapacity(){
+        	console.log("upc called");
+        	var cap = $('#inputPlantcapacityval1').val();
+        	var cost = getPlantCostPerKW(cap) * cap;
+        	$('#inputcost1').val(cost.toFixed(2));
+        	updateInvestModal();
         }
 
         function calculate() {
