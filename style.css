@@ -176,3 +176,9 @@ h1 {
 	padding: 6px;
 }
  
+.page2values {
+	background-color: orange;
+	border-radius: 6px;
+	width: 80%;
+	margin: 0 auto;
+}
